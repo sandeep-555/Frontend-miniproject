@@ -1,0 +1,87 @@
+body
+{
+    background-color: rgb(154, 203, 246);
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+.container
+{
+    background-color: rgb(245, 166, 156);
+    padding: 60px;
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+
+}
+
+
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+
+
+}
+.container.show-nav
+{
+    transform: rotate(-20deg);
+}
+
+
+.circle-container
+{
+    position:fixed;
+    top:-100px;
+    left: -100px;
+
+
+}
+
+.circle
+{
+   background-color: aliceblue;
+   height: 200px;
+   width: 200px;
+   border-radius: 50%;
+
+}
+
+.circle button
+{
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    background-color:transparent;
+    font-size: 30px;
+    border: none;
+    height: 100px;
+}
+
+.circle button#open
+{
+    left:60%;
+}
+.circle button#close
+{
+    transform: rotate(90deg);
+    transform-origin: top left;
+    
+}
+ 
+nav{
+    position: fixed;
+    bottom: 0 ;
+    z-index: 100;
+
+}
+nav li{
+    list-style: none;
+    padding: 20px;
+    transform: translate(-120%);
+
+}
+.container.show-nav +nav li{
+    transform: translate(0%);
+    transition-delay: 0.3s ease;
+
+}
